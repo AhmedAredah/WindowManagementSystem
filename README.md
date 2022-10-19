@@ -1,5 +1,5 @@
 # Window Management System
-This project is part of Virginia Tech CS5040 course with Prof. Tessema.
+This project is part of Virginia Tech CS5040 course with Prof. Tessema Mengistu.
 
 # Project Description
 Many applications areas such as computer graphics, geographic information systems, and VLSI design require the ability to store and query a collection of rectangles. In 2D, typical queries include the ability to find all rectangles that cover a query point or query rectangle, and to report all intersections from among the set of rectangles. Adding and removing rectangles from the collection are also fundamental operations.
