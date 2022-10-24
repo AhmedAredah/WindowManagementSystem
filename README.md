@@ -29,60 +29,56 @@ Insert a rectangle named name with upper left corner (x, y), width w and height 
 ### Remove-by-name
 Remove the rectangle with name name. If two or more rectangle have the same name, then any one such rectangle may be removed. If no rectangle exists with this name, it should be so reported.
 
-|Command Format	         | remove {name}   |
-|Command Example	         | remove someRect |
-|Output on Success Example | Display Nothing |
-|Output on Failure Example	| Rectangle rejected: (rectangleB)|
+| Command Format 	| remove {name} 	|
+|---	|---	|
+| Command Example 	| remove someRect 	|
+| Output on Success Example 	| Display Nothing 	|
+| Output on Failure Example 	| Rectangle rejected: (rectangleB) 	|
 
 ### Remove-by-coords
 Remove the rectangle with the specified dimensions. If two or more rectangles have the same dimensions, then any one such rectangle may be removed. If no rectangle exists with these dimensions, it should be so reported.
 
-Command Format	            | remove {x} {y} {w} {h}
-Command Example	         | remove   2  5  1     5
-Output on Success Example  | Display Nothing 
-Output on Failure Example	| Rectangle rejected: (2, 5, 1, 5)
-Output on Failure Example2	| Rectangle rejected: (-15, 5, 1, 5)
+| Command Format 	| remove {x} {y} {w} {h} 	|
+|---	|---	|
+| Command Example 	| remove   2  5  1     5 	|
+| Output on Success Example 	| Display Nothing 	|
+| Output on Failure Example 	| Rectangle rejected: (2, 5, 1, 5) 	|
+| Output on Failure Example2 	| Rectangle rejected: (-15, 5, 1, 5) 	|
 
 ### Region Search
 Report all rectangles currently in the database that intersect the query rectangle specified by the regionsearch parameters. For each such rectangle, list out its name and coordinates. A regionsearch command should be rejected if the height or width are not greater than 0. However, it is (syntactically) acceptable for the regionsearch rectangle to be all or partly outside of the 1024 by 1024 world box.
 
-Command Format	           | regionsearch {x} {y} {w} {h}
-Command Example	        | regionsearch  -900 5 5000 20
-Output on Success Example | 	Rectangles intersecting region (-900, 5, 5000, 20):
-                              (a, 45, 0, 10, 10)
-                              (b, 400, 0, 100, 310)
-Output on Failure Example | Display Nothing 
+| Command Format 	| regionsearch {x} {y} {w} {h} 	|
+|---	|---	|
+| Command Example 	| regionsearch  -900 5 5000 20 	|
+| Output on Success Example 	| Rectangles intersecting region (-900, 5, 5000, 20):<br>(a, 45, 0, 10, 10)<br>(b, 400, 0, 100, 310) 	|
+| Output on Failure Example 	| Display Nothing 	|
 
 ### Intersections
 Report all pairs of rectangles within the database that intersect.
 
-Command Format             | intersections
-Command Example	         | intersections     
-Output on Success Example	| Intersection pairs:
-                             (goodRect, 5, 3, 56, 56 | goodRect3, 25, 3, 6, 6
-Output on Failure Example	| Intersection pairs:
+| Command Format 	| intersections 	|
+|---	|---	|
+| Command Example 	| intersections 	|
+| Output on Success Example 	| Intersection pairs:<br>(goodRect, 5, 3, 56, 56 \| goodRect3, 25, 3, 6, 6 	|
+| Output on Failure Example 	| Intersection pairs: 	|
 
 ### Search
 Return the information about the rectangles(s), if any, that have name {name}.
 
-Command Format	                                | search {name}
-Command Example	                             | search   mainRect
-Output on Success Example	                    | Rectangles found: (mainRect, 25, 3, 6, 6)
-Output on Success Example2 (multiple matches)  | Rectangles found: (mainRect, 25, 3, 6, 6)
-                                                 Rectangles found: (mainRect, 111, 23, 16, 16)
-Output on Failure Example	                    | Rectangle not found: mainRect
+| Command Format 	| search {name} 	|
+|---	|---	|
+| Command Example 	| search   mainRect 	|
+| Output on Success Example 	| Rectangles found: (mainRect, 25, 3, 6, 6) 	|
+| Output on Success Example2 (multiple matches) 	| Rectangles found: (mainRect, 25, 3, 6, 6)<br>Rectangles found: (mainRect, 111, 23, 16, 16) 	|
+| Output on Failure Example 	| Rectangle not found: mainRect 	|
 
 ### Dump
 Return a “dump” of the BST. The BST dump should print out each BST node (use the *in-order traversal* ). For each BST node, print that node’s depth and value (rectangle info). At the end, please print out the size of the BST.
 
-Command Format	             | dump
-Command Example	          | dump    
-Output on Success Example   | BST dump:
-                              Node has depth 0, Value (name1, 4, 6, 2, 2)
-                              Node has depth 1, Value (name2, 1, 0, 2, 4)
-                              Node has depth 2, Value (name3, 1, 2, 1023, 4)
-                              BST size is: 3
-Output on Success Example2 |  BST dump:
-                              Node has depth 0, Value (null)
-                              BST size is: 0
+| Command Format 	| dump 	|
+|---	|---	|
+| Command Example 	| dump 	|
+| Output on Success Example 	| BST dump:<br>Node has depth 0, Value (name1, 4, 6, 2, 2)<br>Node has depth 1, Value (name2, 1, 0, 2, 4)<br>Node has depth 2, Value (name3, 1, 2, 1023, 4)<br>BST size is: 3 	|
+| Output on Success Example2 	| BST dump:<br>Node has depth 0, Value (null)<br>BST size is: 0 	|
                               
