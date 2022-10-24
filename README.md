@@ -20,10 +20,11 @@ The command file may contain any mix of the following additional commands. In th
 ### Insert
 Insert a rectangle named name with upper left corner (x, y), width w and height h. It is permissible for two or more rectangles to have the same name, and it is permissible for two or more rectangles to have the same spatial dimensions and position. The name must begin with a letter, and may contain letters, digits, and underscore characters. Names are case sensitive. A rectangle should be rejected for insertion if its height or width are not greater than 0. All rectangles must fit within the “world box” that is 1024 by 1024 units in size and has upper left corner at (0, 0). If a rectangle is all or partly out of this world box, it should be rejected for insertion.
 
-|Command Format	         | insert {name} {x} {y} {w} {h}|
-|Command Example	         | insert   hello 2  5  1     5|
-|Output on Success Example	| Rectangle accepted: (hello, 2, 5, 1, 5)|
-|Output on Failure Example	| Rectangle rejected: (hello, 1020, 1020, 1, 7)|
+| Command Format 	| insert {name} {x} {y} {w} {h} 	|
+|---	|---	|
+| Command Example 	| insert hello 2 5 1 5 	|
+| Output on Success Example 	| Rectangle accepted: (hello, 2, 5, 1, 5) 	|
+| Output on Failure Example 	| Rectangle rejected: (hello, 1020, 1020, 1, 7) 	|
 
 ### Remove-by-name
 Remove the rectangle with name name. If two or more rectangle have the same name, then any one such rectangle may be removed. If no rectangle exists with this name, it should be so reported.
